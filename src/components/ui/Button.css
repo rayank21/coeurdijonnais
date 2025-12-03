@@ -1,0 +1,32 @@
+.btn {
+    padding: 1rem 2.5rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border: 1px solid transparent;
+    background: transparent;
+    transition: all 0.4s var(--ease-luxury);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary {
+    border-color: var(--color-gold);
+    color: var(--color-ink);
+}
+
+.btn-primary:hover {
+    background: var(--color-cassis);
+    border-color: var(--color-cassis);
+    color: #FFF;
+}
+
+.btn-secondary {
+    border-color: var(--color-ink);
+    color: var(--color-ink);
+}
+
+.btn-secondary:hover {
+    background: var(--color-ink);
+    color: var(--color-canvas);
+}

@@ -1,0 +1,86 @@
+/* System: Cœur Dijonnais - Luxury Tokens */
+:root {
+  /* Typography Scale - Royal & Modern pairing */
+  --font-display: 'Poppins', sans-serif;
+  --font-body: 'Poppins', sans-serif;
+
+  /* Spatial System */
+  --space-unit: 0.75rem;
+  --container-max: 1600px;
+
+  /* Color Philosophy - The "Cassis & Gold" Palette */
+  --color-canvas: #F9F7F2;
+  /* Pierre de Bourgogne / Cream */
+  --color-ink: #1A1A1A;
+  /* Soft Black */
+  --color-gold: #D4AF37;
+  /* Antique Gold */
+  --color-cassis: #4A0E18;
+  /* Deep Burgundy/Cassis */
+  --color-glaze: #C66B28;
+  /* Caramel Amber */
+
+  /* Animation Timing - Slow Cinema */
+  --ease-luxury: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --duration-slow: 800ms;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-canvas);
+  color: var(--color-ink);
+  line-height: 1.6;
+  overflow-x: hidden;
+  /* Subtle noise texture */
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  color: var(--color-ink);
+}
+
+p {
+  font-weight: 300;
+  letter-spacing: 0.05em;
+}
+
+button {
+  font-family: var(--font-body);
+  cursor: pointer;
+}
+
+/* Utilities */
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 calc(var(--space-unit) * 4);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-canvas);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-gold);
+  border-radius: 4px;
+}

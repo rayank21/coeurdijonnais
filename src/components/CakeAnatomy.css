@@ -1,0 +1,160 @@
+.anatomy-section {
+    padding: 8rem 0;
+    background-color: var(--color-canvas);
+    color: var(--color-ink);
+}
+
+.anatomy-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.anatomy-title {
+    color: var(--color-cassis);
+    margin-bottom: 1rem;
+}
+
+.anatomy-subtitle {
+    color: var(--color-gold);
+    font-family: var(--font-body);
+}
+
+.anatomy-display {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.cake-cross-section {
+    position: relative;
+    width: 100%;
+    height: 60vh;
+    /* Removed black background */
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Center the image */
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 200px 200px 0 0;
+    /* Arch style on container */
+    overflow: hidden;
+    border: 1px solid var(--color-gold);
+}
+
+.cross-section-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Ensure it fills the arch */
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.hotspot {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 50;
+    display: flex;
+    align-items: center;
+}
+
+.hotspot-point {
+    width: 12px;
+    height: 12px;
+    background: var(--color-gold);
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2);
+    transition: all 0.3s;
+}
+
+.hotspot:hover .hotspot-point,
+.hotspot.active .hotspot-point {
+    transform: scale(1.2);
+    background: var(--color-cassis);
+    /* Darker active state */
+    box-shadow: 0 0 0 6px rgba(74, 14, 24, 0.2);
+}
+
+.hotspot-line {
+    width: 40px;
+    height: 1px;
+    background: var(--color-gold);
+    margin: 0 10px;
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+.hotspot:hover .hotspot-line,
+.hotspot.active .hotspot-line {
+    transform: scaleX(1);
+}
+
+.hotspot-label {
+    font-family: var(--font-body);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-ink);
+    /* Dark text */
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: all 0.3s;
+    background: rgba(255, 255, 255, 0.8);
+    /* Readability */
+    padding: 2px 5px;
+    border-radius: 4px;
+}
+
+.hotspot:hover .hotspot-label,
+.hotspot.active .hotspot-label {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.layer-details-wrapper {
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+}
+
+.layer-details h3 {
+    color: var(--color-cassis);
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+
+.layer-details p {
+    color: var(--color-ink);
+    font-size: 1.1rem;
+    opacity: 0.8;
+}
+
+.layer-details.empty p {
+    font-style: italic;
+    opacity: 0.5;
+}
+
+@media (max-width: 968px) {
+    .anatomy-display {
+        grid-template-columns: 1fr;
+    }
+
+    .cake-cross-section {
+        height: 40vh;
+        margin-bottom: 2rem;
+    }
+
+    .anatomy-section {
+        padding: 4rem 0;
+    }
+}

@@ -1,0 +1,10 @@
+.footer {
+  background-color: var(--color-cassis);
+  color: var(--color-canvas);
+  padding: 4rem 0;
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
