@@ -14,14 +14,14 @@ const reviews = [
     {
         id: 2,
         name: "Thomas L.",
-        location: "Paris",
+        location: "Dijon",
         rating: 5,
         text: "Enfin une pâtisserie qui ose le vrai goût du terroir sans être lourde. La livraison était impeccable, le gâteau est arrivé frais et intact. Je recommande !"
     },
     {
         id: 3,
         name: "Claire D.",
-        location: "Lyon",
+        location: "Dijon",
         rating: 5,
         text: "Le rapport qualité-prix est imbattable. On sent vraiment le travail artisanal derrière. C'est devenu mon petit plaisir coupable du week-end."
     }
