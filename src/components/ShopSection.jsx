@@ -7,6 +7,8 @@ import productImg from '../assets/gateau photo 1.png'; // Using the hero image f
 
 const ShopSection = () => {
     const [quantity, setQuantity] = useState(1);
+    const [isGift, setIsGift] = useState(false);
+    const [giftMessage, setGiftMessage] = useState('');
     const unitPrice = 3.90;
 
     const handleQuantityChange = (delta) => {
@@ -83,6 +85,35 @@ const ShopSection = () => {
                                 <span className="total-label">Total</span>
                                 <span className="total-amount">{totalPrice}€</span>
                             </div>
+                        </div>
+
+                        <div className="gift-option-container">
+                            <label className="gift-checkbox-label">
+                                <input
+                                    type="checkbox"
+                                    checked={isGift}
+                                    onChange={(e) => setIsGift(e.target.checked)}
+                                />
+                                <span className="gift-label-text">C'est pour offrir ? (Ajouter une carte)</span>
+                            </label>
+
+                            {isGift && (
+                                <motion.div
+                                    className="gift-message-wrapper"
+                                    initial={{ opacity: 0, height: 0 }}
+                                    animate={{ opacity: 1, height: 'auto' }}
+                                    exit={{ opacity: 0, height: 0 }}
+                                >
+                                    <textarea
+                                        className="gift-message-input"
+                                        placeholder="Votre message personnel (sera écrit à la main)..."
+                                        value={giftMessage}
+                                        onChange={(e) => setGiftMessage(e.target.value)}
+                                        maxLength={150}
+                                    />
+                                    <span className="char-count">{giftMessage.length}/150</span>
+                                </motion.div>
+                            )}
                         </div>
 
                         <Button variant="primary" className="add-to-cart-btn">
