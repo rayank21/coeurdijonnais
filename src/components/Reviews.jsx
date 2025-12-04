@@ -39,7 +39,7 @@ const Reviews = () => {
                                 <Star key={i} size={24} fill="#D4AF37" color="#D4AF37" />
                             ))}
                         </div>
-                        <span className="rating-text">4.9/5 sur plus de 500 avis</span>
+                        <span className="rating-text">4.9/5 sur 10 avis vérifiés</span>
                     </div>
                 </div>
 
