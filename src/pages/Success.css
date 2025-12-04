@@ -1,0 +1,41 @@
+.success-page {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #FDFBF7;
+    text-align: center;
+}
+
+.success-content {
+    background: white;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.success-icon {
+    margin-bottom: 1.5rem;
+}
+
+.success-content h1 {
+    font-family: var(--font-display);
+    color: var(--color-cassis);
+    margin-bottom: 1rem;
+}
+
+.success-content p {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.order-number {
+    font-weight: 700;
+    color: var(--color-gold) !important;
+    font-size: 1.2rem;
+    margin-bottom: 2rem !important;
+}

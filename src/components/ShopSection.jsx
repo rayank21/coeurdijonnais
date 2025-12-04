@@ -5,10 +5,14 @@ import Button from './ui/Button';
 import './ShopSection.css';
 import productImg from '../assets/gateau photo 1.png'; // Using the hero image for now as product image
 
+import { useCart } from '../context/CartContext';
+
 const ShopSection = () => {
+    const { addToCart } = useCart();
     const [quantity, setQuantity] = useState(1);
     const [isGift, setIsGift] = useState(false);
     const [giftMessage, setGiftMessage] = useState('');
+    const [showToast, setShowToast] = useState(false);
     const unitPrice = 3.90;
 
     const handleQuantityChange = (delta) => {
@@ -16,6 +20,23 @@ const ShopSection = () => {
         if (newQuantity >= 1 && newQuantity <= 50) {
             setQuantity(newQuantity);
         }
+    };
+
+    const handleAddToCart = () => {
+        addToCart({
+            id: 'coeur-dijonnais',
+            name: 'Le Cœur Dijonnais',
+            price: unitPrice,
+            image: productImg
+        }, quantity, { isGift, giftMessage });
+
+        setShowToast(true);
+        setTimeout(() => setShowToast(false), 2000);
+
+        // Reset form
+        setQuantity(1);
+        setIsGift(false);
+        setGiftMessage('');
     };
 
     const totalPrice = (quantity * unitPrice).toFixed(2);
@@ -116,9 +137,13 @@ const ShopSection = () => {
                             )}
                         </div>
 
-                        <Button variant="primary" className="add-to-cart-btn">
+                        <Button
+                            variant="primary"
+                            className="add-to-cart-btn"
+                            onClick={handleAddToCart}
+                        >
                             <ShoppingBag size={18} style={{ marginRight: '8px' }} />
-                            Ajouter au Panier
+                            {showToast ? "Ajouté !" : "Ajouter au Panier"}
                         </Button>
 
                         <p className="shipping-note">
